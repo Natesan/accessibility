@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Makes sure that the document type is communicated to the browser -->
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Accessibility</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        body {
+            width: 900px;
+        }
+
+        .page-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a[href*='#'] {
+            text-decoration: none;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h3 class="page-center">Accessibility</h3>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="#content">Skip Navigation Links</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="content">
+        <div>
+            <form>
+                <fieldset>
+                    <label id="inputLabel1">Form Input Label 1</label>
+                    <input type="text" aria-label="inputLabel1" />
+                    <br />
+                    <label id="inputLabel2">Form Input Label 2</label>
+                    <input type="text" aria-label="inputLabel2" />
+                    <br />
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="page-center">
+            <table style="width: 300px;">
+                <caption>
+                    Table Summary
+                </caption>
+                <tbody>
+                    <th>S.No</th>
+                    <th>Details</th>
+                    <th>Links</th>
+                    <tr>
+                        <td>1</td>
+                        <td>SAP</td>
+                        <td>www.sap.com</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Google</td>
+                        <td>www.google.com</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+        <!-- TODO: Dialog implementation with form fields managing focus using javascript -->
+        <!-- TODO: Expand & Collapse actions on certain implementation needs to be accessible -->
+        <!-- TODO: Provide Landmarks to the page -->
+        <!-- TODO: Provide keyboard accessibility instructions for implementation that are non-standard -->
+        <!-- TODO: Provide appropriate viewport dimensions & handle scroll bars -->
+        <!-- TODO: Group skipping via F6 to be implemented -->
+        <!-- TODO: Layout tables to take appropriate roles -->
+        <!-- TODO: Required field indicator -->
+        <!-- TODO: Visual focus outline to be present -->
+    </section>
+    <footer></footer>
+</body>
+
+</html>
