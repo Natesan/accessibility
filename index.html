@@ -50,7 +50,8 @@
             <form>
                 <fieldset>
                     <label id="inputLabel1">Form Input Label 1</label>
-                    <input type="text" aria-label="inputLabel1" />
+                    <input required="true" type="text" aria-label="inputLabel1" />
+                    <!-- 'required' works well for most user agents, use 'aria-required' for backward compatibility -->
                     <br />
                     <label id="inputLabel2">Form Input Label 2</label>
                     <input type="text" aria-label="inputLabel2" />
@@ -90,7 +91,6 @@
         <!-- TODO: Provide appropriate viewport dimensions & handle scroll bars -->
         <!-- TODO: Group skipping via F6 to be implemented -->
         <!-- TODO: Layout tables to take appropriate roles -->
-        <!-- TODO: Required field indicator -->
         <!-- TODO: Visual focus outline to be present -->
     </section>
     <footer></footer>
