@@ -4,15 +4,23 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessibility</title>
     <style>
         * {
             box-sizing: border-box;
+        }
+
+        input,
+        label,
+        button,
+        form {
+            margin-bottom: 5px;
             padding: 5px;
         }
 
-        body {
-            width: 900px;
+        ul {
+            padding: 0;
         }
 
         .page-center {
@@ -29,6 +37,17 @@
             display: flex;
             justify-content: space-around;
             list-style: none;
+        }
+
+        .visuallyhidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
         }
     </style>
 </head>
@@ -49,14 +68,39 @@
         <div>
             <form>
                 <fieldset>
-                    <label id="inputLabel1">Form Input Label 1</label>
-                    <input required="true" type="text" aria-label="inputLabel1" />
+                    <legend>Search Form</legend>
+                    <!-- Associating labels using 'for' -->
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" id="firstname">
+                    <br />
+
+                    <!-- Implicit Labelling -->
+                    <label>
+                        Last Name
+                        <input type="text" name="lastname">
+                    </label><br />
+
+                    <!-- Hidden Labels -->
+                    <label for="search" class="visuallyhidden">Search: </label>
+                    <input type="text" name="search" id="search" required="true">
                     <!-- 'required' works well for most user agents, use 'aria-required' for backward compatibility -->
-                    <br />
-                    <label id="inputLabel2">Form Input Label 2</label>
-                    <input type="text" aria-label="inputLabel2" />
-                    <br />
-                    <button type="submit">Submit</button>
+                    <button type="submit">Search</button><br />
+
+                    <!-- Using aria-labelledby -->
+                    <label id="org">Organization</label>
+                    <input id="organization" required="true" type="text" aria-labelledby="org"
+                        placeholder="Enter Organization" /><br />
+                    <!-- 'placeholder' styles provided by the browser is not complaint with the minimum contrast ratio and hence would need some updates -->
+
+                    <!-- Using aria-describedby to voice over details after the label & inputs are read -->
+                    <label id="date" for="date">Date</label>
+                    <span>
+                        <input type="text" name="date" id="date" aria-labelledby="date"
+                            aria-describedby="dateDesc">
+                        <span id="dateDesc">MM/YYYY</span>
+                    </span><br/>
+
+                    <button type="submit">Search</button>
                     <button type="reset">Reset</button>
                 </fieldset>
             </form>
@@ -88,7 +132,7 @@
         <!-- TODO: Expand & Collapse actions on certain implementation needs to be accessible -->
         <!-- TODO: Provide Landmarks to the page -->
         <!-- TODO: Provide keyboard accessibility instructions for implementation that are non-standard -->
-        <!-- TODO: Provide appropriate viewport dimensions & handle scroll bars -->
+        <!-- TODO: Handle scroll bars -->
         <!-- TODO: Group skipping via F6 to be implemented -->
         <!-- TODO: Layout tables to take appropriate roles -->
         <!-- TODO: Visual focus outline to be present -->
