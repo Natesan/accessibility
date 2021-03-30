@@ -1,5 +1,12 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed,wght@1,300&display=swap');
+
+*, *::before, *::after {
     box-sizing: border-box;
+    margin-top: 0;
+}
+
+body{
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 input,
@@ -12,6 +19,18 @@ form {
 
 ul {
     padding: 0;
+}
+
+table,
+thead,
+tbody,
+tfoot,
+tr,
+td {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    border: none;
 }
 
 .page-center {
